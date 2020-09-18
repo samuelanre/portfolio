@@ -5,35 +5,25 @@
     {% load static %}
 
     <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-      <h2>This is my portfolio homepage</h2>
-      </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
-
-    <a href="{% url 'post:all_posts' %}">Posts</a>
-    </div>
-    <div class="col-sm-6">
-
-    <a href="{% static 'portfolio/YFG 2020.pdf' %}">Resume</a>
-    </div>
-    </div>
-    <div class="row">
+    <div class="row" style="text-align:center;">
       <div class="col-sm-12">
 
     <img src="{% static 'portfolio/project1.jpeg' %}" width="400px">
       </div>
       </div>
-
+      <div class="row" style="text-align:center;" >
+        <div class="col-sm-12" >
+      <h3>Samuel is the Chief Technical Officer (CTO) at Treasure House Business Services in Lagos, Nigeria</h3>
+      </div>
+      </div>
+Portfolio
       <div class="row no-gutters">
 
     {% for project in projects %}
-      <div class="col-sm">
-      <h2>{{ project.title }}</h2>
+      <div class="col-sm border">
+      <img src="{{ project.image.url }}" height="400px">
+      <h3>{{ project.title }}</h3>
       <p>{{ project.description }}</p>
-      <img src="{{ project.image.url }}" height="100px">
       <br>
         {% if project.url %}
           <a href="{{ project.url }}">Link</a>
